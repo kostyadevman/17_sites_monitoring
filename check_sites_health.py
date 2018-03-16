@@ -17,7 +17,7 @@ def is_server_respond_with_200(url):
     try:
         response = requests.get(url)
         return response.status_code == requests.codes.ok
-    except:
+    except Exception:
         return False
 
 
@@ -38,7 +38,7 @@ def get_domain_name_from_url(url):
 def is_expired(expiration_date, expire_period):
     try:
         return datetime.now() + timedelta(expire_period) < expiration_date
-    except:
+    except Exception:
         return False
 
 
