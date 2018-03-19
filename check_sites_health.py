@@ -9,14 +9,13 @@ from datetime import datetime, timedelta
 def load_urls4check(path_to_file):
     with open(path_to_file, 'r') as file_with_urls:
         urls = file_with_urls.read().splitlines()
-        file_with_urls.close()
     return urls
 
 
 def is_server_respond_with_200(url):
     try:
         response = requests.get(url)
-        return response.status_code == requests.codes.ok
+        return response.ok
     except requests.RequestException as error:
         return False
 
@@ -38,7 +37,7 @@ def get_domain_name_from_url(url):
 def is_expired(expiration_date, expire_period):
     try:
         return datetime.now() + timedelta(expire_period) < expiration_date
-    except requests.RequestException as error:
+    except TypeError as error:
         return False
 
 
