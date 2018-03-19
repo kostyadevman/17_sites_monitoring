@@ -12,7 +12,7 @@ def load_urls4check(path_to_file):
     return urls
 
 
-def is_server_respond_with_200(url):
+def is_server_respond_ok(url):
     try:
         response = requests.get(url)
         return response.ok
@@ -52,9 +52,9 @@ if __name__ == '__main__':
 
     for url in urls:
         domain_name = get_domain_name_from_url(url)
-        print('Site {} respond with status HTTP 200: {}'.format(
+        print('Site {} is ok: {}'.format(
             url,
-            is_server_respond_with_200(url)
+            is_server_respond_ok(url)
         ))
 
         expiration_date = get_domain_expiration_date(domain_name)

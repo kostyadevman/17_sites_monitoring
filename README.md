@@ -19,13 +19,13 @@ https://github.com
 
 ```bash
 $ python check_sites_health.py <path to file>
-Site https://www.google.ru respond with status HTTP 200: True
+Site https://www.google.ru is ok: True
 Domain www.google.ru expiration time more than 30 days: True
   
-Site https://devman.org respond with status HTTP 200: True
+Site https://devman.org is ok: True
 Domain devman.org expiration time more than 30 days: True
   
-Site https://github.com respond with status HTTP 200: True
+Site https://github.com is ok: True
 Domain github.com expiration time more than 30 days: True
 ```
 # Project Goals
